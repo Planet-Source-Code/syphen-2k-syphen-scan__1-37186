@@ -1,0 +1,23 @@
+commands:
+send [data]			sends data to the server
+wait 				waits for the server to respond
+add[data]			so the log will look like "whatever.com anonFTP" with anonFTP as the data
+quit				quits script
+
+Arguments:
+eg IF left 220 THEN quit
+if the first argument is TRUE (left 220) then run the command (quit)
+or
+eg IF left 220 ELSE quit
+if the first argument is FALSE then run the command
+
+Arguments in IF:
+left [data]			if the server sends "FTP is good" and [data] is "FTP" then TRUE
+right [data]			if server sends "FTP is good" and [data] is "good" or even "od" then TRUE
+find [data]			if the [data] is found in the last string sent from server then TRUE
+cords [num along] [data]	if server sends "FTP is good" and [num along] is 5 and [data] is "is" then TRUE
+
+Things to put in the send data:
+$host				replaced with remote host name
+$ip				replaced with remote ip
+
